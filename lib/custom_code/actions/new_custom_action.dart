@@ -1,0 +1,27 @@
+// Automatic FlutterFlow imports
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'index.dart'; // Imports other custom actions
+import '/flutter_flow/custom_functions.dart'; // Imports custom functions
+import 'package:flutter/material.dart';
+// Begin custom action code
+// DO NOT REMOVE OR MODIFY THE CODE ABOVE!
+
+Future<String> newCustomAction(String email) async {
+  // Validar se o campo está vazio
+  if (email.isEmpty) {
+    return "O e-mail não pode estar vazio"; // Mensagem traduzida
+  }
+
+  // Expressão regular para validar e-mails
+  String emailPattern = r'^[^@\s]+@[^@\s]+\.[^@\s]+$';
+  RegExp regExp = RegExp(emailPattern);
+
+  if (!regExp.hasMatch(email)) {
+    return "Formato de e-mail inválido"; // Mensagem traduzida
+  }
+
+  return "E-mail verificado com sucesso"; // Mensagem traduzida
+}
